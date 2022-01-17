@@ -6,8 +6,9 @@ const FLOOR_NORMAL = Vector2(0 , -1)
 
 func _physics_process(delta):
 	dir.x = speed
-	
 	move_and_slide(dir,FLOOR_NORMAL)
+
+
 
 func _on_Area2D_area_entered(area):
 	speed = speed *-1
