@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Kiwi - bas .png-4db3c45a15d19b88eaea5b8718847c91.stex"
+path="res://.import/Kiwi_-_droite_64.png-db70ac2a2568040d18b67e4ba6c2a7a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/joueur/Kiwi - bas .png"
-dest_files=[ "res://.import/Kiwi - bas .png-4db3c45a15d19b88eaea5b8718847c91.stex" ]
+source_file="res://sprite/joueur/Kiwi_-_droite_64.png"
+dest_files=[ "res://.import/Kiwi_-_droite_64.png-db70ac2a2568040d18b67e4ba6c2a7a0.stex" ]
 
 [params]
 
