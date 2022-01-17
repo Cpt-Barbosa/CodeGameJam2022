@@ -16,19 +16,19 @@ animations = [ {
 } ]
 
 [node name="requin" type="KinematicBody2D"]
-position = Vector2( 64, 123 )
+position = Vector2( 114, 124 )
 script = ExtResource( 1 )
 speed = 300
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="col_obstacle" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 417, 117 )
+position = Vector2( 21, 14 )
 rotation = -1.56187
 shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 392, 101 )
+position = Vector2( 2, 1 )
 scale = Vector2( 0.392188, 0.430556 )
 frames = SubResource( 2 )
 animation = "mouvement"
