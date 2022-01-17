@@ -21,6 +21,7 @@ func get_input():
 		if !self.is_on_floor():
 			self.get_child(1).set_frame(2)
 	velocity = velocity.normalized() * speed
+	print(str(position.y))
 
 func _physics_process(delta):
 	get_input()

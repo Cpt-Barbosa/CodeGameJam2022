@@ -26,3 +26,10 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
+
+[node name="vision_Joueur" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_right = 1015
+limit_bottom = 3445
+smoothing_enabled = true
