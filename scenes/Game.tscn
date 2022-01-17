@@ -8,7 +8,7 @@
 extents = Vector2( 34.5, 1749.25 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 518, 10 )
+extents = Vector2( 510.5, 10 )
 
 [node name="Game" type="Node2D"]
 
@@ -35,9 +35,6 @@ position = Vector2( 1012, 243 )
 [node name="mur" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2( 49, 1497 )
 shape = SubResource( 4 )
-
-[node name="Joueur" parent="." instance=ExtResource( 2 )]
-position = Vector2( 482, 309 )
 
 [node name="Sol" type="StaticBody2D" parent="."]
 position = Vector2( 529, 3435 )
