@@ -11,6 +11,7 @@ func get_input():
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
 	velocity = velocity.normalized() * speed
+	print(str(position.y))
 
 func _physics_process(delta):
 	get_input()
