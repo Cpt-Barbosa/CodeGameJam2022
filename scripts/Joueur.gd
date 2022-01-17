@@ -10,12 +10,9 @@ func get_input():
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
-	#if Input.is_action_pressed("move_down"):
-	#	velocity.y += 1
-	#if Input.is_action_pressed("move_up"):
-	#	velocity.y -= 1
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
 	get_input()
+	velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity")
 	velocity = move_and_slide(velocity)
