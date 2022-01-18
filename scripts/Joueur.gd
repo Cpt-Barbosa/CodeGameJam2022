@@ -37,6 +37,10 @@ func _physics_process(delta):
 		#print("I collided with ", collision.collider.name)
 	if collision && collision.collider.name == "requin":
 		collision.collider.notification(0)
+		collision.collider.mourir()
+	if collision && collision.collider.get("BulleAir") == "BulleAir":
+		collision.collider.notification(0)
+		#print("I collided with ", collision.collider.name)
 
 func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
@@ -68,6 +72,7 @@ func get_input_velocity() -> float:
 func die():
 	state_machine.travel("mort")
 	set_physics_process(false)
+
 func _notification(what):
 	if what == 0:
-		queue_free()
+		pass

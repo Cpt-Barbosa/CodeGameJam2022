@@ -1,21 +1,24 @@
 extends CanvasLayer
 
+var valeurActu = self.transform.x
 var TailleMax = self.transform.x
-var temps = 0
 var Est_Vide = false
-export var delay = 0.05
+export var perte = 0.05
 
 func _physics_process(delta):
-	self.get_child(0).transform.x = TailleMax - (temps* TailleMax / 100)
+	valeurActu -= (perte* valeurActu / 100)
+	self.get_child(0).transform.x = valeurActu
 	
-	if self.get_child(0).transform.x.x > 0:
-		temps += delay
-	else:
+	if self.get_child(0).transform.x.x <= 0:
 		BarreVide()
-	#print(str(self.transform.x))
 	
 func BarreVide():
 	Est_Vide = true
 	
 func GetBarreVide():
 	return Est_Vide
+
+func AddAir(valeur):
+	valeurActu += (valeur * TailleMax / 100)
+	if valeurActu > TailleMax:
+		valeurActu = TailleMax
