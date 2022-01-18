@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprite/ennemi/Band_De_Poisson.png" type="Texture" id=1]
+
+[node name="Banc de poissons" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 553, 388 )
+scale = Vector2( 1.07979, 0.76259 )
+texture = ExtResource( 1 )
