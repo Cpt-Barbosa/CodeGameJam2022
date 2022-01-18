@@ -148,7 +148,6 @@ position = Vector2( 479, 184 )
 
 [node name="Joueur" parent="." instance=ExtResource( 2 )]
 position = Vector2( 157, 300 )
-move_speed = 200.0
 jump_height = 100.0
 jump_time_to_peak = 1.0
 jump_time_to_descent = 1.0
