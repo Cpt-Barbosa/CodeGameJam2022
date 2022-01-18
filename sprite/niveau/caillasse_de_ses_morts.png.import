@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/algues.png-d22b716aa033fab5a362a6b48dfe1887.stex"
+path="res://.import/caillasse_de_ses_morts.png-f0ebf71db55171ff6d6db582a904fb2f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/niveau/algues.png"
-dest_files=[ "res://.import/algues.png-d22b716aa033fab5a362a6b48dfe1887.stex" ]
+source_file="res://sprite/niveau/caillasse_de_ses_morts.png"
+dest_files=[ "res://.import/caillasse_de_ses_morts.png-f0ebf71db55171ff6d6db582a904fb2f.stex" ]
 
 [params]
 
