@@ -40,16 +40,17 @@ func get_input_velocity() -> float:
 	var horizontal := 0.0
 	
 	if !self.is_on_floor():
-			self.get_child(1).set_animation("falling")
+			pass
+			#self.get_child(1).set_animation("falling")
 			
 	if Input.is_action_pressed("move_left"):
 		if self.is_on_floor():
-			self.get_child(2).set_flip_h(true)
+			self.get_child(1).set_flip_h(true)
 		horizontal -= 1.0
 		
 	if Input.is_action_pressed("move_right"):
 		if self.is_on_floor():
-			self.get_child(2).set_flip_h(false)
+			self.get_child(1).set_flip_h(false)
 		horizontal += 1.0
 	
 	return horizontal
