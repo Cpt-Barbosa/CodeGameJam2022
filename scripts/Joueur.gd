@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var move_speed = 200.0
 
+var state_machine
 var velocity := Vector2.ZERO
 
 export var jump_height : float
@@ -13,10 +14,15 @@ onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * 
 onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 onready var jump_count = 2
 
+func _ready():
+	state_machine = $AnimationTree.get("parameters/playback")
+
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta
 	velocity.x = get_input_velocity() * move_speed
 	
+	if Input.is_action_just_pressed("attack"):
+		state_machine.travel("Attaque")
 	if Input.is_action_just_pressed("jump") and jump_count >0:
 		jump_count -=1
 		jump()
@@ -54,3 +60,7 @@ func get_input_velocity() -> float:
 		horizontal += 1.0
 	
 	return horizontal
+
+func die():
+	state_machine.travel("mort")
+	set_physics_process(false)
