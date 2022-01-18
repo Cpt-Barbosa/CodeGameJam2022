@@ -22,9 +22,9 @@ animations = [ {
 "name": "moving_coffre",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "moving",
+"name": "falling",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -32,9 +32,9 @@ animations = [ {
 "name": "falling_coffre",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "falling",
+"name": "moving",
 "speed": 5.0
 } ]
 
@@ -132,7 +132,6 @@ limit_bottom = 3445
 smoothing_enabled = true
 
 [node name="barreOxy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 35, -235 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Test"
