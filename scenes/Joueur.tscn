@@ -127,6 +127,7 @@ texture = ExtResource( 2 )
 [node name="vision_Joueur" type="Camera2D" parent="."]
 current = true
 limit_left = 0
+limit_top = 3
 limit_right = 1015
 limit_bottom = 3445
 smoothing_enabled = true
