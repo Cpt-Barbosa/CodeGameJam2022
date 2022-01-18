@@ -29,7 +29,7 @@ scale = Vector2( 0.339329, 0.479592 )
 texture = ExtResource( 4 )
 
 [node name="RequinPNG" type="Sprite" parent="."]
-position = Vector2( 996, 157 )
+position = Vector2( 996, 220 )
 scale = Vector2( 0.618301, 0.614713 )
 texture = ExtResource( 5 )
 
