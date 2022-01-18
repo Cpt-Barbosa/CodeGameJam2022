@@ -9,8 +9,6 @@ var hasBulle = false
 var time = 1000
 
 func _process(delta):
-	print(hasBulle)
-	print(time)
 	if time== 1000 && !hasBulle:
 		time = 0
 		hasBulle = true

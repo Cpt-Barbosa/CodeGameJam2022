@@ -186,13 +186,13 @@ position = Vector2( 8.5, 1521 )
 shape = SubResource( 8 )
 
 [node name="TriggerRequinG" type="Area2D" parent="."]
-position = Vector2( 12, 2257 )
+position = Vector2( 2, 2257 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerRequinG"]
 shape = SubResource( 9 )
 
 [node name="TriggerRequinD" type="Area2D" parent="."]
-position = Vector2( 993, 2251 )
+position = Vector2( 1008, 2251 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerRequinD"]
 shape = SubResource( 10 )
@@ -205,6 +205,7 @@ position = Vector2( 133, 238 )
 jump_height = 100.0
 jump_time_to_peak = 1.0
 jump_time_to_descent = 1.0
+MAX_ACCELERATION = 1000.0
 
 [node name="Coffre" parent="." instance=ExtResource( 5 )]
 position = Vector2( 527, 3329 )
