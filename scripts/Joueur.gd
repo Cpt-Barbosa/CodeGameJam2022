@@ -24,6 +24,11 @@ func _physics_process(delta):
 		jump_count=2
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	var collision = move_and_collide(velocity * delta)
+	if collision && collision.collider.name == "Coffre":
+		collision.collider.notification(0)
+		#print("I collided with ", collision.collider.name)
 
 func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
