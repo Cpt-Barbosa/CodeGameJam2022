@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scenes/requin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Joueur.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/Crabe.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/BulleAir.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Banc de poissons.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/meduse.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/Popup.gd" type="Script" id=16]
 [ext_resource path="res://sprite/niveau/PIQUE bas.png" type="Texture" id=17]
 
@@ -224,7 +225,7 @@ position = Vector2( 133, 238 )
 jump_height = 100.0
 jump_time_to_peak = 1.0
 jump_time_to_descent = 1.0
-MAX_ACCELERATION = 1000.0
+MAX_ACCELERATION = 98.0
 
 [node name="Coffre" parent="." instance=ExtResource( 5 )]
 position = Vector2( 527, 3329 )
@@ -273,3 +274,6 @@ shape = SubResource( 21 )
 
 [node name="BulleAir" parent="." instance=ExtResource( 13 )]
 position = Vector2( 130, 1169 )
+
+[node name="méduse" parent="." instance=ExtResource( 15 )]
+position = Vector2( 395, 377 )

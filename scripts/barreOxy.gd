@@ -4,7 +4,7 @@ var valeurActu = self.transform.x
 var TailleMax = self.transform.x
 var Est_Vide = false
 var oskour = 1
-export var perte = 1#0.5
+export var perte = 0.05
 
 func _physics_process(delta):
 	self.get_child(0).transform.x = valeurActu
