@@ -1,41 +1,52 @@
 extends KinematicBody2D
 
-export (int) var speed = 350
-var God_Mod = false
-const FLOOR_NORMAL = Vector2(0 , -1)
-var jump_count = 2
-#...
-# Vertical impulse applied to the character upon jumping in meters per second.
-export var jump_impulse = 9000
+export var move_speed = 200.0
 
-var velocity = Vector2()
+var velocity := Vector2.ZERO
 
-func get_input():
-	velocity = Vector2()
+export var jump_height : float
+export var jump_time_to_peak : float
+export var jump_time_to_descent : float
+
+onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
+onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
+onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
+onready var jump_count = 2
+
+func _physics_process(delta):
+	velocity.y += get_gravity() * delta
+	velocity.x = get_input_velocity() * move_speed
+	
+	if Input.is_action_just_pressed("jump") and jump_count >0:
+		jump_count -=1
+		jump()
+	elif self.is_on_floor():
+		jump_count=2
+	
+	velocity = move_and_slide(velocity, Vector2.UP)
+
+func get_gravity() -> float:
+	return jump_gravity if velocity.y < 0.0 else fall_gravity
+
+func jump():
+	velocity.y = jump_velocity
+
+func get_input_velocity() -> float:
+	var horizontal := 0.0
+	
 	if !self.is_on_floor():
 			self.get_child(1).set_animation("falling")
-	if Input.is_action_pressed("move_right"):
-		velocity.x += speed
-		if self.is_on_floor():
-			self.get_child(1).set_animation("moving")
-			self.get_child(1).set_flip_h(false)
-	elif Input.is_action_pressed("move_left"):
-		velocity.x -= speed
+			
+	if Input.is_action_pressed("move_left"):
 		if self.is_on_floor():
 			self.get_child(1).set_animation("moving")
 			self.get_child(1).set_flip_h(true)
-	if Input.is_action_just_pressed("jump"):
-		if jump_count > 0:
-			jump_count -= 1
-			velocity.y -= jump_impulse	
-	velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity")
-	#print(str(position.y))
-
-func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity,FLOOR_NORMAL)
-	if self.is_on_floor():
-		jump_count=2
-	if self.get_parent().get_node("barreOxy").GetBarreVide() && !God_Mod:
-		print("mort")
-
+		horizontal -= 1.0
+		
+	if Input.is_action_pressed("move_right"):
+		if self.is_on_floor():
+			self.get_child(1).set_animation("moving")
+			self.get_child(1).set_flip_h(false)
+		horizontal += 1.0
+	
+	return horizontal

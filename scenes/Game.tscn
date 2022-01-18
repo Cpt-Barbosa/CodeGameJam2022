@@ -13,7 +13,7 @@ extents = Vector2( 34.5, 1749.25 )
 extents = Vector2( 527.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 268.263, 10 )
+extents = Vector2( 263.389, 17.625 )
 
 [node name="Game" type="Node2D"]
 
@@ -52,13 +52,16 @@ shape = SubResource( 5 )
 
 [node name="Joueur" parent="." instance=ExtResource( 2 )]
 position = Vector2( 157, 300 )
+jump_height = 100.0
+jump_time_to_peak = 1.0
+jump_time_to_descent = 1.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 247, 462 )
 scale = Vector2( 0.984108, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -32.5165, 0 )
+position = Vector2( -1.01614, 0 )
 shape = SubResource( 6 )
 
 [node name="Coffre" parent="." instance=ExtResource( 5 )]
