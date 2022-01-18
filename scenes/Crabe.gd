@@ -21,7 +21,9 @@ func _physics_process(delta):
 func check_collisions(dir,delta):
 	var collision = move_and_collide(dir * delta)
 	if collision && collision.collider.get("type") == "Joueur":
+		print("kiwi")
 		collision.collider.notification(0)
+		self.get_parent().get_node("barreOxy").RemoveAir(5)
 	if collision && collision.collider.get("type") == "Ancre":	
 		mourir()
 

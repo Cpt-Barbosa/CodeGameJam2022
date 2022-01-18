@@ -28,5 +28,7 @@ func AddAir(valeur):
 	valeurActu += (valeur * TailleMax / 100)
 	if valeurActu > TailleMax:
 		valeurActu = TailleMax
+
 func RemoveAir(valeur):
 	valeurActu -= (valeur * TailleMax / 100)
+	
