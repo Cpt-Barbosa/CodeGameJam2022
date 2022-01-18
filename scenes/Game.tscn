@@ -16,7 +16,7 @@ extents = Vector2( 527.5, 10 )
 extents = Vector2( 15, 1711.5 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 10, 1710 )
+extents = Vector2( 18.5, 1710 )
 
 [sub_resource type="CircleShape2D" id=9]
 
@@ -129,7 +129,7 @@ shape = SubResource( 7 )
 position = Vector2( 1011, 190 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MurDroit"]
-position = Vector2( 0, 1521 )
+position = Vector2( 8.5, 1521 )
 shape = SubResource( 8 )
 
 [node name="TriggerRequinG" type="Area2D" parent="."]
