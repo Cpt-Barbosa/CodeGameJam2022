@@ -51,12 +51,14 @@ func get_input_velocity() -> float:
 			
 	if Input.is_action_pressed("move_left"):
 		if self.is_on_floor():
-			self.get_child(1).set_flip_h(true)
+			self.get_child(2).flip_v=true
+			self.rotation_degrees=180
 		horizontal -= 1.0
 		
 	if Input.is_action_pressed("move_right"):
 		if self.is_on_floor():
-			self.get_child(1).set_flip_h(false)
+			self.get_child(2).flip_v=false
+			self.rotation_degrees=0
 		horizontal += 1.0
 	
 	return horizontal

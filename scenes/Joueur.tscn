@@ -13,8 +13,8 @@
 [ext_resource path="res://sprite/joueur/attack 2 c.png" type="Texture" id=14]
 [ext_resource path="res://sprite/joueur/attack 3 c.png" type="Texture" id=15]
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 32.0156
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 17.5, 33 )
 
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 26.0
@@ -48,7 +48,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/Hitbox attaque/CollisionShape2D:disabled")
+tracks/2/path = NodePath("Hitbox attaque/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -88,7 +88,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 4 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/Hitbox attaque/CollisionShape2D:disabled")
+tracks/2/path = NodePath("Hitbox attaque/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -127,7 +127,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/Hitbox attaque/CollisionShape2D:disabled")
+tracks/2/path = NodePath("Hitbox attaque/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -180,7 +180,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite/Hitbox attaque/CollisionShape2D:disabled")
+tracks/2/path = NodePath("Hitbox attaque/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -255,18 +255,18 @@ position = Vector2( 477, 261 )
 script = ExtResource( 1 )
 
 [node name="CollisionJoueur" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -3 )
-shape = SubResource( 3 )
+position = Vector2( -14.5, -1 )
+shape = SubResource( 19 )
+
+[node name="Hitbox attaque" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox attaque"]
+position = Vector2( 38, 0 )
+shape = SubResource( 7 )
+disabled = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-
-[node name="Hitbox attaque" type="Area2D" parent="Sprite"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Hitbox attaque"]
-position = Vector2( 22, 0 )
-shape = SubResource( 7 )
-disabled = true
 
 [node name="vision_Joueur" type="Camera2D" parent="."]
 current = true
