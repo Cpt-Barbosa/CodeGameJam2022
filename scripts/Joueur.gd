@@ -31,16 +31,7 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	var collision = move_and_collide(velocity * delta)
-	if collision && collision.collider.name == "Coffre":
-		collision.collider.notification(0)
-		#print("I collided with ", collision.collider.name)
-	if collision && collision.collider.name == "requin":
-		collision.collider.notification(0)
-		collision.collider.mourir()
-	if collision && collision.collider.get("type") == "BulleAir":
-		collision.collider.notification(0)
-		#print("I collided with ", collision.collider.name)
+	check_collisions(velocity,delta)
 
 func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
@@ -69,10 +60,21 @@ func get_input_velocity() -> float:
 	
 	return horizontal
 
+func check_collisions(dir,delta):
+	var collision = move_and_collide(velocity * delta)
+	if collision && collision.collider.get("type") == "Coffre":
+		collision.collider.notification(0)
+	if collision && collision.collider.get("type") == "BulleAir":
+		collision.collider.notification(0)
+		
 func die():
 	state_machine.travel("mort")
 	set_physics_process(false)
-
+	
+func _get(property):
+	if property == "type":
+		return "Joueur"
+		
 func _notification(what):
 	if what == 0:
 		pass

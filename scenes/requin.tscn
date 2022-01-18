@@ -28,9 +28,6 @@ speed = 300
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2, -11 )
 shape = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( -3, -7 )
@@ -47,8 +44,5 @@ frames = SubResource( 2 )
 animation = "mouvement"
 frame = 3
 flip_h = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
