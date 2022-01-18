@@ -38,7 +38,7 @@ func _physics_process(delta):
 	if collision && collision.collider.name == "requin":
 		collision.collider.notification(0)
 		collision.collider.mourir()
-	if collision && collision.collider.get("BulleAir") == "BulleAir":
+	if collision && collision.collider.get("type") == "BulleAir":
 		collision.collider.notification(0)
 		#print("I collided with ", collision.collider.name)
 

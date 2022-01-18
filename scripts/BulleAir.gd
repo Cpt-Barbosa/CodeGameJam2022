@@ -6,5 +6,5 @@ func _notification(what):
 		queue_free()
 		
 func _get(property):
-	if property == "BulleAir":
+	if property == "type":
 		return "BulleAir"
