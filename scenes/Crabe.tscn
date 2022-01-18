@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Crabe.gd" type="Script" id=1]
+[ext_resource path="res://sprite/ennemi/crabe/crabe2.png" type="Texture" id=2]
+[ext_resource path="res://sprite/ennemi/crabe/Margelaine_le_Crabe.png" type="Texture" id=3]
+[ext_resource path="res://sprite/ennemi/crabe/crabe3.png" type="Texture" id=4]
+[ext_resource path="res://sprite/bonus/FabriqueDA.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=18]
+radius = 15.0
+
+[node name="Crabe" type="KinematicBody2D"]
+position = Vector2( 189, 491 )
+script = ExtResource( 1 )
+speed = 50
+pas = 120
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 4.76837e-07, 0 )
+scale = Vector2( 0.114583, 0.124161 )
+frames = SubResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3 )
+rotation = 1.5708
+shape = SubResource( 18 )

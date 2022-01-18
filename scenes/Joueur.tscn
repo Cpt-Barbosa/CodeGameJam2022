@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/Joueur.gd" type="Script" id=1]
 [ext_resource path="res://sprite/joueur/Kiwi_-_droite_64.png" type="Texture" id=2]
@@ -192,6 +192,47 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=20]
+resource_name = "base coffre"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Hitbox attaque/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
 [sub_resource type="Animation" id=15]
 resource_name = "mort"
 length = 1.5
@@ -220,8 +261,14 @@ tracks/1/keys = {
 "values": [ 0.0, 20.0, 40.0, 60.0, 80.0, 100.0, 120.0, 140.0, 160.0, 180.0 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Attaque (coffre)"
+
 [sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Attaque"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "base coffre"
 
 [sub_resource type="AnimationNodeAnimation" id=13]
 animation = "base"
@@ -237,14 +284,26 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+auto_advance = true
+
 [sub_resource type="AnimationNodeStateMachine" id=10]
 states/Attaque/node = SubResource( 9 )
-states/Attaque/position = Vector2( 622, 128 )
+states/Attaque/position = Vector2( 766, 141 )
+"states/Attaque (coffre)/node" = SubResource( 21 )
+"states/Attaque (coffre)/position" = Vector2( 723, 284 )
 states/base/node = SubResource( 13 )
 states/base/position = Vector2( 350, 128 )
+"states/base coffre/node" = SubResource( 22 )
+"states/base coffre/position" = Vector2( 419, 237 )
 states/mort/node = SubResource( 16 )
 states/mort/position = Vector2( 161, 128 )
-transitions = [ "base", "Attaque", SubResource( 14 ), "Attaque", "base", SubResource( 17 ), "base", "mort", SubResource( 18 ) ]
+transitions = [ "base", "Attaque", SubResource( 14 ), "Attaque", "base", SubResource( 17 ), "base", "mort", SubResource( 18 ), "base", "base coffre", SubResource( 23 ), "base coffre", "Attaque (coffre)", SubResource( 24 ), "Attaque (coffre)", "base coffre", SubResource( 25 ) ]
 start_node = "base"
 end_node = "mort"
 
@@ -283,6 +342,7 @@ anims/Attaque = SubResource( 5 )
 "anims/Attaque (coffre)" = SubResource( 8 )
 anims/RESET = SubResource( 4 )
 anims/base = SubResource( 12 )
+"anims/base coffre" = SubResource( 20 )
 anims/mort = SubResource( 15 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

@@ -14,15 +14,24 @@ onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * 
 onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 onready var jump_count = 2
 
+var hasCoffre
+
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
 
 func _physics_process(delta):
+	if hasCoffre:
+		state_machine.travel("base coffre")
 	velocity.y += get_gravity() * delta
+	if velocity.y >= 98:
+		velocity.y=98
 	velocity.x = get_input_velocity() * move_speed
 	
 	if Input.is_action_just_pressed("attack"):
-		state_machine.travel("Attaque")
+		if hasCoffre:
+			state_machine.travel("Attaque (coffre)")
+		else:
+			state_machine.travel("Attaque")
 	if Input.is_action_just_pressed("jump") and jump_count >0:
 		jump_count -=1
 		jump()
@@ -61,9 +70,10 @@ func get_input_velocity() -> float:
 	return horizontal
 
 func check_collisions(dir,delta):
-	var collision = move_and_collide(velocity * delta)
+	var collision = move_and_collide(velocity * delta,true)
 	if collision && collision.collider.get("type") == "Coffre":
 		collision.collider.notification(0)
+		hasCoffre=true
 		
 func die():
 	state_machine.travel("mort")
