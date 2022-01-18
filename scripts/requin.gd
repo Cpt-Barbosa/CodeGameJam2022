@@ -5,6 +5,7 @@ var dir = Vector2()
 const FLOOR_NORMAL = Vector2(0 , -1)
 
 func _physics_process(delta):
+	$AnimatedSprite.play()
 	dir.x = speed
 	move_and_slide(dir,FLOOR_NORMAL)
 
