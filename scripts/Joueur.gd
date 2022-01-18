@@ -10,6 +10,7 @@ var rip = false
 export var jump_height : float
 export var jump_time_to_peak : float
 export var jump_time_to_descent : float
+export var MAX_ACCELERATION : float
 
 onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
@@ -30,8 +31,8 @@ func _physics_process(delta):
 	if hasCoffre:
 		state_machine.travel("base coffre")
 	velocity.y += get_gravity() * delta
-	if velocity.y >= 98:
-		velocity.y=98
+	if velocity.y >= MAX_ACCELERATION:
+		velocity.y=MAX_ACCELERATION
 	velocity.x = get_input_velocity() * move_speed
 	
 	if Input.is_action_just_pressed("attack"):
