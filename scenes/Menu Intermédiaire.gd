@@ -17,8 +17,8 @@ func _ready():
 
 
 func _on_StartButton_pressed():
-	self.get_tree().change_scene("res://scenes/Menu Intermédiaire.tscn")
+	self.get_tree().change_scene("res://scenes/Game.tscn")
 
 
-func _on_QuitButton_pressed():
-	self.get_tree().quit()
+func _on_ReturnMain_pressed():
+	self.get_tree().change_scene("res://scenes/MainMenu.tscn")

@@ -35,7 +35,7 @@ margin_left = 405.0
 margin_top = 309.0
 margin_right = 614.0
 margin_bottom = 360.0
-text = "Commencer la partie "
+text = "Lancer la partie"
 __meta__ = {
 "_edit_use_anchors_": false
 }
