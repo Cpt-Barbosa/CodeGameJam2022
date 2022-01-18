@@ -3,15 +3,20 @@ extends CanvasLayer
 var valeurActu = self.transform.x
 var TailleMax = self.transform.x
 var Est_Vide = false
-export var perte = 0.05
+var oskour = 1
+export var perte = 1#0.5
 
 func _physics_process(delta):
-	valeurActu -= (perte* TailleMax / 100)
 	self.get_child(0).transform.x = valeurActu
 	
 	if self.get_child(0).transform.x.x <= 0:
 		BarreVide()
-		self.get_tree().change_scene("res://scenes/MenuMort.tscn")
+		while oskour < 2 :
+			self.get_tree().get_root().get_child(0).get_node("Joueur").die()
+			oskour = oskour + 1
+	else :
+		valeurActu -= (perte* TailleMax / 100)
+		
 	
 func BarreVide():
 	Est_Vide = true

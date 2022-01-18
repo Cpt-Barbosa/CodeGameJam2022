@@ -4,6 +4,8 @@ export var move_speed = 200.0
 
 var state_machine
 var velocity := Vector2.ZERO
+var timer = null
+var rip = false
 
 export var jump_height : float
 export var jump_time_to_peak : float
@@ -18,6 +20,11 @@ var hasCoffre
 
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+	timer = Timer.new()
+	timer.set_one_shot(true)
+	timer.set_wait_time(3.5)
+	timer. connect("timeout", self, "timeout_complete")
+	add_child(timer)
 
 func _physics_process(delta):
 	if hasCoffre:
@@ -41,6 +48,10 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	check_collisions(velocity,delta)
+
+
+func timeout_complete() :
+	self.get_tree().change_scene("res://scenes/MenuMort.tscn")
 
 func get_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
@@ -77,7 +88,9 @@ func check_collisions(dir,delta):
 		
 func die():
 	state_machine.travel("mort")
+	$CriAgonie.play(0)
 	set_physics_process(false)
+	timer.start()
 	
 func _get(property):
 	if property == "type":
