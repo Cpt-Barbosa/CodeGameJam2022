@@ -46,7 +46,6 @@ func mourir():
 	var posy = self.position.y
 	var ressource = load("scenes/BulleAir.tscn").instance()
 	ressource.transform = Transform2D(0, Vector2(posx,posy))
-	
 	get_tree().get_root().get_child(0).add_child(ressource)
 	
 	queue_free()
