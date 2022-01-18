@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
+var God_Mod = true
 const FLOOR_NORMAL = Vector2(0 , -1)
 
 var velocity = Vector2()
@@ -21,11 +22,13 @@ func get_input():
 		if !self.is_on_floor():
 			self.get_child(1).set_frame(2)
 	velocity = velocity.normalized() * speed
-	print(str(position.y))
+	#print(str(position.y))
 
 func _physics_process(delta):
 	get_input()
 	velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity")
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	
+	if self.get_child(3).GetBarreVide() && !God_Mod:
+		print("mort")
 
