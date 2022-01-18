@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprite/ennemi/requin/requin1.png" type="Texture" id=1]
+[ext_resource path="res://scenes/MenuMort.gd" type="Script" id=2]
+[ext_resource path="res://sprite/bg/background.png" type="Texture" id=3]
+[ext_resource path="res://sprite/joueur/Kiwi_-_gauche_64.png" type="Texture" id=4]
+[ext_resource path="res://sprite/ennemi/crabe/crabe4.png" type="Texture" id=5]
+[ext_resource path="res://sprite/menu/menu mort/texte.png" type="Texture" id=6]
+
+[node name="MenuMort" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 515.5, -163 )
+scale = Vector2( 1.43472, 0.442235 )
+texture = ExtResource( 3 )
+
+[node name="Requin1" type="Sprite" parent="."]
+position = Vector2( 1182, 478 )
+rotation = 0.579972
+scale = Vector2( 0.786148, 0.804239 )
+texture = ExtResource( 1 )
+
+[node name="Kiwi-Gauche64" type="Sprite" parent="."]
+position = Vector2( 524, 282 )
+rotation = -3.13153
+scale = Vector2( 1.35442, 1.36174 )
+texture = ExtResource( 4 )
+
+[node name="Requin2" type="Sprite" parent="."]
+position = Vector2( -159, 472 )
+rotation = -0.647131
+scale = Vector2( 0.786148, 0.804239 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Crabe5" type="Sprite" parent="."]
+position = Vector2( 773, 527 )
+scale = Vector2( 0.361111, 0.449664 )
+texture = ExtResource( 5 )
+
+[node name="Crabe4" type="Sprite" parent="."]
+position = Vector2( 211, 521 )
+scale = Vector2( 0.361111, 0.449664 )
+texture = ExtResource( 5 )
+
+[node name="Texte" type="Sprite" parent="."]
+position = Vector2( 500, 152 )
+scale = Vector2( 1.26359, 1.31333 )
+texture = ExtResource( 6 )
+
+[node name="backmenu" type="Button" parent="."]
+margin_left = 391.0
+margin_top = 386.0
+margin_right = 625.0
+margin_bottom = 451.0
+text = "Retour vers le menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="backmenu" to="." method="_on_backmenu_pressed"]

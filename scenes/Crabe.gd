@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var speed = 300
-var gravity = 10
+var gravity = 100
 var dir = Vector2()
 const FLOOR_NORMAL = Vector2(0,-1)
 export var pas = 100
