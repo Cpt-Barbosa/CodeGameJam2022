@@ -12,6 +12,11 @@ radius = 32.0156
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "moving_coffre",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "falling_coffre",
@@ -25,11 +30,6 @@ animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "moving",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "moving_coffre",
 "speed": 5.0
 } ]
 
