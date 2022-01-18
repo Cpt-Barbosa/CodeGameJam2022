@@ -64,8 +64,6 @@ func check_collisions(dir,delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision && collision.collider.get("type") == "Coffre":
 		collision.collider.notification(0)
-	if collision && collision.collider.get("type") == "BulleAir":
-		collision.collider.notification(0)
 		
 func die():
 	state_machine.travel("mort")
