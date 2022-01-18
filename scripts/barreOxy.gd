@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 var TailleMax = self.transform.x
 var temps = 0

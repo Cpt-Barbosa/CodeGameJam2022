@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 350
-var God_Mod = true
+var God_Mod = false
 const FLOOR_NORMAL = Vector2(0 , -1)
 var jump_count = 2
 #...
@@ -36,6 +36,6 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity,FLOOR_NORMAL)
 	if self.is_on_floor():
 		jump_count=2
-	if self.get_child(3).GetBarreVide() && !God_Mod:
+	if self.get_parent().get_node("barreOxy").GetBarreVide() && !God_Mod:
 		print("mort")
 
