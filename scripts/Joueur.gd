@@ -16,7 +16,7 @@ export var MAX_ACCELERATION : float
 onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
-onready var jump_count = 2
+onready var jump_count = 1000
 
 var hasCoffre = false
 
@@ -45,7 +45,7 @@ func _physics_process(delta):
 		jump_count -=1
 		jump()
 	elif self.is_on_floor():
-		jump_count=2
+		jump_count=1000
 	
 	
 	check_collisions(velocity,delta)
