@@ -18,7 +18,7 @@ onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * 
 onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 onready var jump_count = 2
 
-var hasCoffre
+var hasCoffre = false
 
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
@@ -103,6 +103,7 @@ func check_collisions(dir,delta):
 			derniereCase = "Coffre"
 			collision.collider.notification(0)
 			hasCoffre=true
+			self.get_tree().change_scene("res://scenes/Niveau2.tscn")
 		
 func die():
 	state_machine.travel("mort")
