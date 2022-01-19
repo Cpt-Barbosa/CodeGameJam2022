@@ -31,20 +31,30 @@ texture = ExtResource( 5 )
 flip_h = true
 
 [node name="StartButton" type="Button" parent="."]
-margin_left = 405.0
-margin_top = 309.0
-margin_right = 614.0
-margin_bottom = 360.0
+margin_left = 406.0
+margin_top = 403.0
+margin_right = 615.0
+margin_bottom = 454.0
 text = "Lancer la partie"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 911.0
+margin_top = 30.0
+margin_right = 987.0
+margin_bottom = 67.0
+text = "Crédits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="QuitButton" type="Button" parent="."]
-margin_left = 405.0
-margin_top = 442.0
-margin_right = 614.0
-margin_bottom = 495.0
+margin_left = 406.0
+margin_top = 491.0
+margin_right = 615.0
+margin_bottom = 544.0
 text = "Quitter le jeu"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -56,4 +66,5 @@ scale = Vector2( 1.5822, 1.48822 )
 texture = ExtResource( 6 )
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

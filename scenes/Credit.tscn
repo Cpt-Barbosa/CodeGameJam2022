@@ -229,6 +229,16 @@ position = Vector2( 476, 845 )
 scale = Vector2( 0.472222, 0.472222 )
 texture = ExtResource( 7 )
 
+[node name="ReturnMainButton" type="Button" parent="Systemkiwi"]
+margin_left = -169.0
+margin_top = 457.0
+margin_right = 168.0
+margin_bottom = 499.0
+text = "Retourner au menu principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Base = SubResource( 1 )
 anims/RESET = SubResource( 2 )
@@ -238,3 +248,5 @@ tree_root = SubResource( 4 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 5 )
+
+[connection signal="pressed" from="Systemkiwi/ReturnMainButton" to="." method="_on_ReturnMainButton_pressed"]

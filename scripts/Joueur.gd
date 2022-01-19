@@ -37,6 +37,7 @@ func _physics_process(delta):
 	velocity.x = get_input_velocity() * move_speed
 	
 	if Input.is_action_just_pressed("attack"):
+		$Taper.play()
 		if hasCoffre:
 			state_machine.travel("Attaque (coffre)")
 		else:
@@ -93,6 +94,7 @@ func check_collisions(dir,delta):
 		if collision.collider.name == "piege" && derniereCase != "piege":
 			derniereCase = "piege"
 			self.get_parent().get_node("barreOxy").RemoveAir(2)
+			$KiwiAie.play()
 			
 		if collision.collider.name == "Floor" && derniereCase != "Floor":
 			derniereCase = "Floor"

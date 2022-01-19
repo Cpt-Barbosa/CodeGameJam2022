@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ancre.wav-b1c319453850a6223cd14609bb680bfd.sample"
+
+[deps]
+
+source_file="res://sound/ancre.wav"
+dest_files=[ "res://.import/ancre.wav-b1c319453850a6223cd14609bb680bfd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

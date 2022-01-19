@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/En fait non.wav-38c13c76671a7229e14c102acad75e72.sample"
+path="res://.import/Noa-yade.wav-407a9b1f2e2f123ea33d521e88dc5f43.sample"
 
 [deps]
 
-source_file="res://sound/En fait non.wav"
-dest_files=[ "res://.import/En fait non.wav-38c13c76671a7229e14c102acad75e72.sample" ]
+source_file="res://sound/Noa-yade.wav"
+dest_files=[ "res://.import/Noa-yade.wav-407a9b1f2e2f123ea33d521e88dc5f43.sample" ]
 
 [params]
 

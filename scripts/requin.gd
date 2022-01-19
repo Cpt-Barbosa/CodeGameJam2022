@@ -39,6 +39,7 @@ func _on_requin_body_entered(body):
 			$AnimatedSprite.flip_h = true
 	elif body.get("type") == "Joueur":
 		self.get_parent().get_node("barreOxy").RemoveAir(25)
+		$KiwiAie.play()
 
 
 func _on_requin_area_entered(area):

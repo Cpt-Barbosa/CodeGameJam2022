@@ -19,7 +19,9 @@ func timeout_complete() :
 func _on_mduse_body_entered(body):
 	if body.get("type")=="Ancre":
 		state_machine.travel("Mort")
+		$Splash.play()
 		self.get_child(3).disabled=true
 		timer.start()
 	if body.get("type")=="Joueur":
 		self.get_parent().get_node("barreOxy").RemoveAir(5)
+		$KiwiAie.play()

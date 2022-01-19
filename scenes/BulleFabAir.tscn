@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/BulleFabAir.gd" type="Script" id=1]
 [ext_resource path="res://sprite/bonus/bulle.png" type="Texture" id=2]
+[ext_resource path="res://sound/plop.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=15]
 radius = 23.1948
@@ -18,5 +19,9 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 0 )
 shape = SubResource( 15 )
+
+[node name="Plop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_BulleAir_body_entered"]

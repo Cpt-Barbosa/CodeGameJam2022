@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/okay.wav-f300250bc09382fc3de5062315e5e470.sample"
+path="res://.import/quiche lorraine.wav-39865f4bee870cf9f05ca7a4ff9fdec3.sample"
 
 [deps]
 
-source_file="res://sound/okay.wav"
-dest_files=[ "res://.import/okay.wav-f300250bc09382fc3de5062315e5e470.sample" ]
+source_file="res://sound/quiche lorraine.wav"
+dest_files=[ "res://.import/quiche lorraine.wav-39865f4bee870cf9f05ca7a4ff9fdec3.sample" ]
 
 [params]
 
