@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://scenes/Ancre.gd" type="Script" id=1]
 [ext_resource path="res://sprite/joueur/attack 3.png" type="Texture" id=2]
@@ -440,6 +440,9 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 2454, 13.5 )
+
 [node name="NiveauTuto" type="Node2D"]
 
 [node name="Background2" type="Sprite" parent="."]
@@ -578,6 +581,12 @@ text = "Passer le tutoriel"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Plafond" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plafond"]
+position = Vector2( 2444, -3.5 )
+shape = SubResource( 51 )
 
 [connection signal="area_entered" from="changement de niveau" to="changement de niveau" method="_on_changement_de_niveau_area_entered"]
 [connection signal="pressed" from="CanvasLayer/SkipButton" to="JoueurTuto" method="_on_SkipButton_pressed"]
