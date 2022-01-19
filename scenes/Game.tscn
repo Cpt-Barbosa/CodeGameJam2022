@@ -311,13 +311,13 @@ cell_tile_origin = 1
 show_collision = true
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 1572885, 0, 0, 2097158, 0, 0, 2162695, 0, 0, 2555905, 0, 0, 3407899, 0, 0, 3407900, 0, 0, 3997700, 0, 0, 4063232, 0, 0, 4063233, 0, 0, 4063234, 0, 0, 5570563, 0, 0, 6160391, 0, 0, 6225931, 0, 0, 6291466, 0, 0, 6291467, 0, 0, 6619167, 0, 0, 6619168, 0, 0, 6750210, 0, 0, 6881307, 0, 0, 6946822, 0, 0 )
+tile_data = PoolIntArray( 1572885, 0, 0, 2097158, 0, 0, 2162695, 0, 0, 2555905, 0, 0, 3407899, 0, 0, 3407900, 0, 0, 3997700, 0, 0, 4063232, 0, 0, 4063233, 0, 0, 4063234, 0, 0, 4063253, 0, 0, 5570563, 0, 0, 6160391, 0, 0, 6291466, 0, 0, 6291467, 0, 0, 6619167, 0, 0, 6619168, 0, 0, 6750210, 0, 0, 6881307, 0, 0, 6946822, 0, 0 )
 
 [node name="méduse" parent="." instance=ExtResource( 15 )]
-position = Vector2( 395, 377 )
+position = Vector2( 395, 371 )
 
 [node name="méduse2" parent="." instance=ExtResource( 15 )]
-position = Vector2( 704, 200 )
+position = Vector2( 663, 195 )
 
 [node name="méduse3" parent="." instance=ExtResource( 15 )]
 position = Vector2( 675, 501 )
