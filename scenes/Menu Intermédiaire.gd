@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_StartButton_pressed():
-	self.get_tree().change_scene("res://scenes/Game.tscn")
+	self.get_tree().change_scene("res://scenes/NiveauTuto.tscn")
 
 
 func _on_ReturnMain_pressed():

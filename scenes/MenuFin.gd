@@ -1,24 +1,26 @@
 extends Panel
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var timer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	timer = Timer.new()
+	timer.set_one_shot(true)
+	timer.set_wait_time(10)
+	timer. connect("timeout", self, "timeout_complete")
+	add_child(timer)
+	timer.start()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func timeout_complete() :
+	var button = Button.new()
+	button.connect("pressed", self, "button_pressed")
+	button.set_position(Vector2(250, 500))
+	button.text="Retourner au menu principal"
+	add_child(button)
 
+func button_pressed() :
+	self.get_tree().change_scene("res://scenes/MainMenu.tscn")
 
-func _on_StartButton_pressed():
-	self.get_tree().change_scene("res://scenes/Menu Intermédiaire.tscn")
-
-
-func _on_QuitButton_pressed():
-	self.get_tree().quit()

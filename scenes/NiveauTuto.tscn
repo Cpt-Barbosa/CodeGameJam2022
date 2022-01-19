@@ -567,4 +567,17 @@ centered_textures = true
 format = 1
 tile_data = PoolIntArray( 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2( 100, 500 )
+transform = Transform2D( 1, 0, 0, 1, 100, 500 )
+
+[node name="SkipButton" type="Button" parent="CanvasLayer"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Passer le tutoriel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="area_entered" from="changement de niveau" to="changement de niveau" method="_on_changement_de_niveau_area_entered"]
+[connection signal="pressed" from="CanvasLayer/SkipButton" to="JoueurTuto" method="_on_SkipButton_pressed"]

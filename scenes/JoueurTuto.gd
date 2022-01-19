@@ -77,10 +77,8 @@ func check_collisions(dir,delta):
 		#print("I collided with ", collision.collider.name)
 		if collision.collider.name == "piege" && derniereCase != "piege":
 			derniereCase = "piege"
-			print("j'ai mal")
 		if collision.collider.name == "Floor" && derniereCase != "Floor":
 			derniereCase = "Floor"
-			print("j'ai pas mal")
 
 
 		
@@ -90,9 +88,13 @@ func die():
 	
 func _get(property):
 	if property == "type":
-		return "Joueur"
+		return "JoueurTuto"
 		
 func _notification(what):
 	if what == 0:
 		pass
 
+
+
+func _on_SkipButton_pressed():
+	self.get_tree().change_scene("res://scenes/Game.tscn")
