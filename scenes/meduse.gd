@@ -21,3 +21,5 @@ func _on_mduse_body_entered(body):
 		state_machine.travel("Mort")
 		self.get_child(3).disabled=true
 		timer.start()
+	if body.get("type")=="Joueur":
+		self.get_parent().get_node("barreOxy").RemoveAir(5)
