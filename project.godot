@@ -12,6 +12,7 @@ config_version=4
 
 config/name="Kiwi Diver"
 run/main_scene="res://scenes/MainMenu.tscn"
+config/icon="res://sprite/joueur/Kiwi_-_gauche_64.png"
 
 [display]
 
